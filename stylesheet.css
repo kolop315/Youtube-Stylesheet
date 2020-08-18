@@ -1,3 +1,8 @@
+/*  
+    Custom youtube stylesheet.
+    Github Repo: https://github.com/kolop315/youtube-custom-stylesheet 
+*/
+
 #author-text, #more, #owner-name {
   color: #287ee6;
 }
@@ -31,6 +36,10 @@
 #grid-title[hidden] ~ #contents.style-scope.ytd-rich-grid-renderer
 {
   padding-top: 30px;
+}
+
+ytd-rich-item-renderer {
+    margin-bottom: 25px;
 }
 
 #contents.ytd-shelf-renderer {
@@ -68,7 +77,7 @@
 #sentiment {
   background-color: #d61e1e;
   border-radius: 4px;
-  box-shadow: 0px 0px 2px #888888;
+  box-shadow: 0px 0px 2px #cccccc;
   width: 315px;
 }
 
@@ -104,7 +113,7 @@
 
 .ytd-subscribe-button-renderer[aria-label*="Subscribe to this channel"] {
   background-color: #d61e1e;
-  box-shadow: 0px 0px 5px #888888;
+  box-shadow: 0px 0px 5px #cccccc;
 }
 
 paper-button.align-by-text, .more-button, yt-formatted-string.style-scope.ytd-author-comment-badge-renderer[aria-label*="verified user"] {
@@ -138,7 +147,7 @@ ytd-sentiment-bar-renderer {
 }
 
 ytd-thumbnail {
-  box-shadow: 0px 0px 5px #888888;
+  box-shadow: 0px 0px 5px #cccccc;
 }
 
 ytd-toggle-button-renderer:nth-child(1) a #button[aria-pressed="true"] {
@@ -149,6 +158,10 @@ ytd-toggle-button-renderer:nth-child(2) a #button[aria-pressed="true"] {
   color: #d61e1e;
 }
 
-ytd-two-column-browse-results-renderer {
-  width: 1320px;
+#dismissable.style-scope.ytd-shelf-renderer {
+    width: 1320px;
+}
+
+#dismissable #buttons {
+    display: none;
 }
