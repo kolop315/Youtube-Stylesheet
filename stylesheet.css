@@ -140,6 +140,16 @@ ytd-author-comment-badge-renderer.style-scope.ytd-comment-renderer.creator a yt-
   background: linear-gradient(to right, var(--yt-spec-general-background-a) 20%, rgba(255, 255, 255, 0) 80%);
 }
 
+.ytd-browse{
+  --ytd-grid-max-width:  1320px;
+  --ytd-grid-1-columns-width: 214px;
+    --ytd-grid-2-columns-width: 440px;
+    --ytd-grid-3-columns-width: 660px;
+    --ytd-grid-4-columns-width: 880px;
+    --ytd-grid-5-columns-width: 1100px;
+    --ytd-grid-6-columns-width: 1320px;
+}
+
 ytd-grid-video-renderer {
   margin: 5px;
 }
