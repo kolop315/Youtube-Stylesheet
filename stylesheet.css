@@ -1,179 +1,91 @@
 /*  
     Custom youtube stylesheet.
-    Github Repo: https://github.com/kolop315/youtube-custom-stylesheet 
+    Github Repo: https://github.com/kolop315/Youtube-Stylesheet
 */
 
-#author-text, #more, #owner-name {
-  color: #287ee6;
+:root{
+  --like-color: var(--google-blue-500);
+  --like-hover-color: var(--google-blue-300);
+  --like-bar-color: var(--google-green-500);
+  --dislike-color: var(--google-red-500);
+  --dislike-hover-color: var(--google-red-300);
+  --dislike-bar-color: var(--google-red-500);
+  --comment-author-color: var(--yt-spec-text-primary);
+  --comment-badge-color: var(--google-blue-500);
+
+  --sentiment-width: 300px;
+  --sentiment-height: 12px;
+  --sentiment-radius: 4px;
 }
 
-#button[aria-label="Dislike"]:hover, ytd-toggle-button-renderer.style-scope.ytd-menu-renderer.style-text.force-icon-button:hover a #button[aria-label^="dislike"], #dislike-button:hover {
-  color: #e49794;
+/* Color when hovering over like buttons */
+ytd-toggle-button-renderer:hover a #button[aria-label^="like"],
+#like-button:hover{
+  color: var(--like-hover-color);
 }
 
-#button[aria-label="Like"]:hover, ytd-toggle-button-renderer.style-scope.ytd-menu-renderer.style-text.force-icon-button:hover a #button[aria-label^="like"], #like-button:hover {
-  color: #95c4e8;
+/* Color when hovering over dislike buttons */
+ytd-toggle-button-renderer:hover a #button[aria-label^="dislike"],
+#dislike-button:hover{
+  color: var(--dislike-hover-color);
 }
 
-#button[aria-pressed="true"][aria-label*="dislike"] {
-  color: #d61e1e;
+/* Color when a like button is pressed */
+#button[aria-label^="like"][aria-pressed="true"]{
+  color: var(--like-color);
 }
 
-#button[aria-pressed="true"][aria-label*="like"] {
-  color: #287ee6;
+/* Color when a dislike button is pressed */
+#button[aria-label^="dislike"][aria-pressed="true"]{
+  color: var(--dislike-color);
 }
 
-#container.ytd-sentiment-bar-renderer {
-  background: none;
+/* like/dislike counts don't change color when the like/dislike button is pressed */
+a #text[aria-label*="likes"]{
+  color: var(--yt-spec-text-secondary);
 }
 
-#grid-title[hidden] ~ #contents.style-scope.ytd-rich-grid-renderer
-{
-  padding-top: 30px;
-}
-
-ytd-rich-item-renderer {
-    margin-bottom: 25px;
-}
-
-#contents.ytd-shelf-renderer {
-  margin-top: 5px;
-}
-
-#dislike-button #button[aria-pressed="true"] {
-  color: #d61e1e;
-}
-
-#like-bar {
-  background-color: #1a9334;
-}
-
-#like-bar[style="width: 100%;"] {
-  border-radius: 4px;
-}
-
-#like-button #button[aria-pressed="true"] {
-  color: #287ee6;
-}
-
-#menu-container {
-  height: 50px;
-}
-
-#meta h3 {
-  margin: 0px;
-}
-
-#placeholder, #textarea {
-  margin-top: 2px;
-}
-
-#sentiment {
-  background-color: #d61e1e;
-  border-radius: 4px;
-  box-shadow: 0px 0px 2px #cccccc;
-  width: 315px;
-}
-
-#sentiment, #like-bar {
+/* Sentiment bar size and colors */
+#sentiment{
+  background-color: var(--dislike-bar-color);
   border: 0px;
-  border-bottom-left-radius: 4px;
-  border-top-left-radius: 4px;
-  height: 10px;
-  margin-top: 0px;
-}
-
-#vote-count {
-  color: #287ee6;
-}
-
-#vote-count-left {
-  color: #287ee6;
-}
-
-.grid-subheader.ytd-shelf-renderer {
-  margin-top: 10px;
-}
-
-.input-content, #placeholder-area {
-  border: solid lightgrey 1px;
-  border-radius: 10px;
-  padding: 5px;
-}
-
-.underline.style-scope.paper-input-container {
-  display: none;
-}
-
-.ytd-subscribe-button-renderer[aria-label*="Subscribe to this channel"] {
-  background-color: #d61e1e;
-  box-shadow: 0px 0px 5px #cccccc;
-}
-
-paper-button.align-by-text, .more-button, yt-formatted-string.style-scope.ytd-author-comment-badge-renderer[aria-label*="verified user"] {
-  color: #287ee6;
-}
-
-yt-formatted-string:focus, a:focus {
-  outline: none;
-}
-
-ytd-author-comment-badge-renderer.style-scope.ytd-comment-renderer.creator {
-  background-color: #287ee6;
-}
-
-ytd-author-comment-badge-renderer.style-scope.ytd-comment-renderer.creator a yt-formatted-string {
-  color: white;
-}
-
-#chips-wrapper {
-  background: none;
-  border: none;
-  position: absolute;
-}
-
-#scroll-container.ytd-feed-filter-chip-bar-renderer:after{
-  background: linear-gradient(to left, var(--yt-spec-general-background-a) 20%, rgba(255, 255, 255, 0) 80%);
-}
-
-#scroll-container.ytd-feed-filter-chip-bar-renderer:before{
-  background: linear-gradient(to right, var(--yt-spec-general-background-a) 20%, rgba(255, 255, 255, 0) 80%);
-}
-
-.ytd-browse{
-  --ytd-grid-max-width:  1320px;
-  --ytd-grid-1-columns-width: 214px;
-    --ytd-grid-2-columns-width: 440px;
-    --ytd-grid-3-columns-width: 660px;
-    --ytd-grid-4-columns-width: 880px;
-    --ytd-grid-5-columns-width: 1100px;
-    --ytd-grid-6-columns-width: 1320px;
-}
-
-ytd-grid-video-renderer {
-  margin: 5px;
-}
-
-ytd-sentiment-bar-renderer {
+  border-radius: var(--sentiment-radius);
+  height: var(--sentiment-height);
   padding: 0px;
+  width: var(--sentiment-width);
 }
 
-ytd-thumbnail {
-  box-shadow: 0px 0px 5px #cccccc;
+/* Remove like bar container bakcground */
+#sentiment #container{
+  background: none;
 }
 
-ytd-toggle-button-renderer:nth-child(1) a #button[aria-pressed="true"] {
-  color: #287ee6;
+/* Like bar size and colors */
+#like-bar {
+  background-color: var(--like-bar-color);
+  border: 0px;
+  border-bottom-left-radius: var(--sentiment-radius);
+  border-top-left-radius: var(--sentiment-radius);
+  height: var(--sentiment-height);
 }
 
-ytd-toggle-button-renderer:nth-child(2) a #button[aria-pressed="true"] {
-  color: #d61e1e;
+/* When 100% likes, both sides need to have the radius */
+#like-bar[style*="width: 100%"]{
+  border-radius: var(--sentiment-radius);
 }
 
-#dismissable.style-scope.ytd-shelf-renderer {
-    width: 1320px;
+/* Additional space to fit the taller sentiment bar*/
+#info{
+  margin-bottom: var(--sentiment-height);
 }
 
-#dismissable #buttons {
-  display: none;
+/* Comment users' name color */
+#header-author a :first-child{
+  color: var(--comment-author-color);
+}
+
+/* Comment users' badge color */
+ytd-author-comment-badge-renderer svg{
+  fill: var(--comment-badge-color);
+  stroke: var(--comment-badge-color)
 }
