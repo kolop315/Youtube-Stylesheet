@@ -109,7 +109,7 @@ ytd-feed-filter-chip-bar-renderer{
 }
 
 /* Have the chips have a slightly smaller width to account for the rounded edges */
-#chips{
+#scroll-container.ytd-feed-filter-chip-bar-renderer{
   width: calc(var(--ytd-rich-grid-chips-bar-width) * var(--home-categories-width-mod) - 16px);
 }
 
