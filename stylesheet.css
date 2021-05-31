@@ -16,6 +16,8 @@
   --sentiment-width: 300px;
   --sentiment-height: 12px;
   --sentiment-radius: 4px;
+
+  --home-categories-width-mod: 0.8;
 }
 
 /* Color when hovering over like buttons */
@@ -88,4 +90,37 @@ a #text[aria-label*="likes"]{
 ytd-author-comment-badge-renderer svg{
   fill: var(--comment-badge-color);
   stroke: var(--comment-badge-color)
+}
+
+/* Center the Category scroll bar on the Home page and add a spacing from the top*/
+ytd-feed-filter-chip-bar-renderer{
+  justify-content: center;
+  width: 100%;
+  margin-top: 16px;
+}
+
+/* Make the Category Bar on the Home Page rounded, spaced from its sides, and have relative positioning */
+#chips-wrapper {
+  position: relative;
+  top: 0px;
+  width: calc(var(--ytd-rich-grid-chips-bar-width) * var(--home-categories-width-mod));
+  border: 2px solid var(--yt-spec-10-percent-layer);
+  border-radius: 32px;
+}
+
+/* Have the chips have a slightly smaller width to account for the rounded edges */
+#chips{
+  width: calc(var(--ytd-rich-grid-chips-bar-width) * var(--home-categories-width-mod) - 16px);
+}
+
+/* Round the right arrow button and make its background solid */
+#right-arrow-button{
+  border-radius: 0 32px 32px 0;
+  background: var(--yt-spec-brand-background-solid);
+}
+
+/* Round the left arrow button and make its background solid */
+#left-arrow-button{
+  border-radius: 32px 0 0 32px;
+  background: var(--yt-spec-brand-background-solid);
 }
