@@ -50,7 +50,7 @@ ytd-toggle-button-renderer:hover a #button[aria-label^="dislike"],
 }
 
 /* like/dislike counts don't change color when the like/dislike button is pressed */
-a #text[aria-label*="likes"]{
+a #text.ytd-toggle-button-renderer[aria-label*="likes"]{
   color: var(--yt-spec-text-secondary);
 }
 
@@ -84,7 +84,7 @@ a #text[aria-label*="likes"]{
 }
 
 /* Additional space to fit the taller sentiment bar*/
-#info{
+.ytd-watch-flexy #info:not(.ytd-watch-flexy){
   margin-bottom: var(--sentiment-height);
 }
 
@@ -107,7 +107,7 @@ ytd-feed-filter-chip-bar-renderer{
 }
 
 /* Make the Category Bar on the Home Page rounded, spaced from its sides, and have relative positioning */
-#chips-wrapper {
+#chips-wrapper.ytd-feed-filter-chip-bar-renderer{
   position: relative;
   top: 0px;
   width: calc(var(--ytd-rich-grid-chips-bar-width) * var(--home-categories-width-mod));
@@ -121,13 +121,13 @@ ytd-feed-filter-chip-bar-renderer{
 }
 
 /* Round the right arrow button and make its background solid */
-#right-arrow-button{
+#right-arrow-button.ytd-feed-filter-chip-bar-renderer{
   border-radius: 0 32px 32px 0;
   background: var(--yt-spec-brand-background-solid);
 }
 
 /* Round the left arrow button and make its background solid */
-#left-arrow-button{
+#left-arrow-button.ytd-feed-filter-chip-bar-renderer{
   border-radius: 32px 0 0 32px;
   background: var(--yt-spec-brand-background-solid);
 }
@@ -140,33 +140,33 @@ ytd-feed-filter-chip-bar-renderer{
 }
 
 /* Add some space to the bottom of the comment box to better center the text within it */
-#input-container .input-wrapper{
+#input-container.ytd-commentbox .input-wrapper{
   padding-bottom: 4px;
 }
 
 /* remove underline from comment box */
-#input-container .underline{
+#input-container.ytd-commentbox .underline{
   display: none;
 }
 
 /* center the elements in the footer of the comment box */
-#comment-dialog * * * #footer{
+#footer.ytd-commentbox{
   justify-content: var(--comment-footer-justification);
 }
 
 /* elements in the footer of the comment box that are not buttons are allotted 0 space to grow into(flex be wack) */
-#comment-dialog * * * #footer >:not(#buttons){
+#footer.ytd-commentbox >:not(#buttons){
   flex: 0;
 }
 
 /* Set the total width of the buttons(combined) */
-#comment-dialog * * * #footer #buttons{
+#buttons.ytd-commentbox{
   width: var(--comment-buttons-total-width);
   justify-content: var(--comment-buttons-justification);
 }
 
 /* Set buttons(the actual buttons not the #buttons element which holds the buttons) to fill up their parent with some margin for spacing them from eachother */
-#comment-dialog * * * #footer #buttons ytd-button-renderer{
+#buttons.ytd-commentbox ytd-button-renderer{
   display: flex;
   max-width: var(--comment-buttons-max-width);
   flex: 1;
@@ -174,19 +174,19 @@ ytd-feed-filter-chip-bar-renderer{
 }
 
 /* there is an options button that doesn't do shit for some reason so remove that crap :) */
-#comment-dialog * * * #footer #buttons >:not(ytd-button-renderer)
+#buttons.ytd-commentbox >:not(ytd-button-renderer)
 {
   display: none;
 }
 
 /* change background and text color */
-#cancel-button{
+#cancel-button.ytd-commentbox{
   background: var(--yt-spec-icon-disabled);
   color: var(--yt-spec-text-primary-inverse);
 }
 
 /* Have the text elements of the buttons fill the buttons so they can be properly selected */
-#comment-dialog * * * #footer #buttons * *{
+#buttons.ytd-commentbox a.ytd-button-renderer{
   width: 100%;
   height: 100%;
 }
