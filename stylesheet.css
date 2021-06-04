@@ -12,6 +12,7 @@
   --dislike-bar-color: var(--google-red-500);
   
   --comment-author-color: var(--yt-spec-text-primary);
+  --comment-author-background: var(--yt-spec-error-background);
   --comment-badge-color: var(--google-blue-500);
 
   --comment-buttons-max-width: 50%;
@@ -93,10 +94,20 @@ a #text.ytd-toggle-button-renderer[aria-label*="likes"]{
   color: var(--comment-author-color);
 }
 
+/* Set background color of comments by the video's owner */
+#header-author [creator]{
+  background: var(--comment-author-background);
+}
+
+/* set text color of channel owner's name in their comments and make it bold */
+#header-author [creator] #text{
+  color: var(--yt-spec-text-primary-inverse);
+  font-weight: bold;
+}
+
 /* Comment users' badge color */
-ytd-author-comment-badge-renderer svg{
+ytd-author-comment-badge-renderer svg, .badge-style-type-verified svg{
   fill: var(--comment-badge-color);
-  stroke: var(--comment-badge-color)
 }
 
 /* Center the Category scroll bar on the Home page and add a spacing from the top*/
