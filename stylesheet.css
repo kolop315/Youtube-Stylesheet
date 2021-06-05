@@ -51,7 +51,7 @@ ytd-toggle-button-renderer:hover a #button[aria-label^="dislike"],
 }
 
 /* like/dislike counts don't change color when the like/dislike button is pressed */
-a #text.ytd-toggle-button-renderer[aria-label*="likes"]{
+.ytd-menu-renderer #text.ytd-toggle-button-renderer{
   color: var(--yt-spec-text-secondary);
 }
 
@@ -141,6 +141,11 @@ ytd-feed-filter-chip-bar-renderer{
 #left-arrow-button.ytd-feed-filter-chip-bar-renderer{
   border-radius: 32px 0 0 32px;
   background: var(--yt-spec-brand-background-solid);
+}
+
+/* change contents' content justification to better fill space when an ad element may mysteriously be missing */
+[page-subtype="home"] #contents{
+  justify-content: space-between;
 }
 
 /* make comment box have a rounded outline*/
