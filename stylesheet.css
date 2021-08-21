@@ -1,7 +1,8 @@
-/*  
-    Custom youtube stylesheet.
-    Github Repo: https://github.com/kolop315/Youtube-Stylesheet
-*/
+/*------------------------------------------------
+  Custom Youtube Stylesheet
+  Author: Nicholas Spalding
+  Github Repo: https://github.com/kolop315/Youtube-Stylesheet
+------------------------------------------------*/
 
 :root{
   --like-color: var(--google-blue-500);
@@ -27,6 +28,10 @@
 
   --home-categories-width-mod: 0.8;
 }
+
+/*------------------------------------------------
+  Video Information Styles
+------------------------------------------------*/
 
 /* Color when hovering over like buttons */
 ytd-toggle-button-renderer:hover a #button[aria-label^="like"],
@@ -89,6 +94,10 @@ ytd-toggle-button-renderer:hover a #button[aria-label^="dislike"],
   margin-bottom: var(--sentiment-height);
 }
 
+/*------------------------------------------------
+  Commenter Name Styling
+------------------------------------------------*/
+
 /* Comment users' name color */
 #header-author a :first-child{
   color: var(--comment-author-color);
@@ -109,6 +118,10 @@ ytd-toggle-button-renderer:hover a #button[aria-label^="dislike"],
 ytd-author-comment-badge-renderer svg, .badge-style-type-verified svg{
   fill: var(--comment-badge-color);
 }
+
+/*------------------------------------------------
+  Home Page's 'chips' Category Tablist Styles
+------------------------------------------------*/
 
 /* Center the Category scroll bar on the Home page and add a spacing from the top*/
 ytd-feed-filter-chip-bar-renderer{
@@ -143,10 +156,18 @@ ytd-feed-filter-chip-bar-renderer{
   background: var(--yt-spec-brand-background-solid);
 }
 
+/*------------------------------------------------
+  Home Page's Contents Styles
+------------------------------------------------*/
+
 /* change contents' content justification to better fill space when an ad element may mysteriously be missing */
 [page-subtype="home"] #contents{
   justify-content: space-between;
 }
+
+/*------------------------------------------------
+  Comment Text Box Styles
+------------------------------------------------*/
 
 /* make comment box have a rounded outline*/
 #input-container .input-wrapper, #placeholder-area{
