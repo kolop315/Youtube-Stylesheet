@@ -46,12 +46,12 @@ ytd-toggle-button-renderer:hover a #button[aria-label^="dislike"],
 }
 
 /* Color when a like button is pressed */
-#button[aria-label^="like"][aria-pressed="true"]{
+#button[aria-label*="like"][aria-pressed="true"]{
   color: var(--like-color);
 }
 
 /* Color when a dislike button is pressed */
-#button[aria-label^="dislike"][aria-pressed="true"]{
+#button[aria-label*="dislike"][aria-pressed="true"]{
   color: var(--dislike-color);
 }
 
