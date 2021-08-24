@@ -5,16 +5,16 @@
 ------------------------------------------------*/
 
 :root{
-  --like-color: var(--google-blue-500);
-  --like-hover-color: var(--google-blue-300);
-  --like-bar-color: var(--google-green-500);
-  --dislike-color: var(--google-red-500);
-  --dislike-hover-color: var(--google-red-300);
-  --dislike-bar-color: var(--google-red-500);
+  --like-color: var(--blue-500);
+  --like-hover-color: var(--blue-300);
+  --like-bar-color: var(--green-500);
+  --dislike-color: var(--red-500);
+  --dislike-hover-color: var(--red-300);
+  --dislike-bar-color: var(--red-500);
   
   --comment-author-color: var(--yt-spec-text-primary);
   --comment-author-background: var(--yt-spec-error-background);
-  --comment-badge-color: var(--google-blue-500);
+  --comment-badge-color: var(--blue-500);
 
   --comment-buttons-max-width: 50%;
   --comment-buttons-total-width: 25%;
@@ -27,6 +27,12 @@
   --sentiment-radius: 4px;
 
   --home-categories-width-mod: 0.8;
+
+  --blue-500: #4285F4;
+  --blue-300: #76A7FA;
+  --green-500: #0F9D58;
+  --red-500: #DB4437;
+  --red-300: #E57368;
 }
 
 /*------------------------------------------------
