@@ -46,7 +46,7 @@ ytd-toggle-button-renderer:hover a #button[aria-label^="like"],
 }
 
 /* Color when hovering over dislike buttons */
-ytd-toggle-button-renderer:hover a #button[aria-label^="dislike"],
+ytd-toggle-button-renderer:hover a #button[aria-label^="Dislike"],
 #dislike-button:hover{
   color: var(--dislike-hover-color);
 }
@@ -57,47 +57,13 @@ ytd-toggle-button-renderer:hover a #button[aria-label^="dislike"],
 }
 
 /* Color when a dislike button is pressed */
-#button[aria-label*="dislike"][aria-pressed="true"]{
+#button[aria-label*="Dislike"][aria-pressed="true"]{
   color: var(--dislike-color);
 }
 
 /* like/dislike counts don't change color when the like/dislike button is pressed */
 .ytd-menu-renderer #text.ytd-toggle-button-renderer{
   color: var(--yt-spec-text-secondary);
-}
-
-/* Sentiment bar size and colors */
-#sentiment{
-  background-color: var(--dislike-bar-color);
-  border: 0px;
-  border-radius: var(--sentiment-radius);
-  height: var(--sentiment-height);
-  padding: 0px;
-  width: var(--sentiment-width);
-}
-
-/* Remove like bar container bakcground */
-#sentiment #container{
-  background: none;
-}
-
-/* Like bar size and colors */
-#like-bar {
-  background-color: var(--like-bar-color);
-  border: 0px;
-  border-bottom-left-radius: var(--sentiment-radius);
-  border-top-left-radius: var(--sentiment-radius);
-  height: var(--sentiment-height);
-}
-
-/* When 100% likes, both sides need to have the radius */
-#like-bar[style*="width: 100%"]{
-  border-radius: var(--sentiment-radius);
-}
-
-/* Additional space to fit the taller sentiment bar*/
-.ytd-watch-flexy #info:not(.ytd-watch-flexy){
-  margin-bottom: var(--sentiment-height);
 }
 
 /*------------------------------------------------
