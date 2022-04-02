@@ -41,12 +41,14 @@
 
 /* Color when hovering over like buttons */
 ytd-toggle-button-renderer:hover a #button[aria-label^="like"],
+ytd-toggle-button-renderer:hover a #button[aria-label^="Unlike"],
 #like-button:hover{
   color: var(--like-hover-color);
 }
 
 /* Color when hovering over dislike buttons */
 ytd-toggle-button-renderer:hover a #button[aria-label^="Dislike"],
+ytd-toggle-button-renderer:hover a #button[aria-label^="Remove dislike"],
 #dislike-button:hover{
   color: var(--dislike-hover-color);
 }
@@ -57,7 +59,8 @@ ytd-toggle-button-renderer:hover a #button[aria-label^="Dislike"],
 }
 
 /* Color when a dislike button is pressed */
-#button[aria-label*="Dislike"][aria-pressed="true"]{
+#button[aria-label*="Dislike"][aria-pressed="true"],
+#button[aria-label*="dislike"][aria-pressed="true"]{
   color: var(--dislike-color);
 }
 
