@@ -59,8 +59,7 @@ ytd-toggle-button-renderer:hover a #button[aria-label^="Remove dislike"],
 }
 
 /* Color when a dislike button is pressed */
-#button[aria-label*="Dislike"][aria-pressed="true"],
-#button[aria-label*="dislike"][aria-pressed="true"]{
+#button[aria-label*="islike"][aria-pressed="true"]{
   color: var(--dislike-color);
 }
 
