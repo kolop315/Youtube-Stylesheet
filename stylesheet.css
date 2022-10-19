@@ -36,38 +36,64 @@
 }
 
 /*------------------------------------------------
+  Thumbnail Styles
+------------------------------------------------*/
+
+/* Remove rounded corners of thumbnails */
+#thumbnail{
+  border-radius: 0px;
+}
+
+/*------------------------------------------------
   Video Information Styles
 ------------------------------------------------*/
 
-/* Color when hovering over like buttons */
-ytd-toggle-button-renderer:hover a #button[aria-label^="like"],
-ytd-toggle-button-renderer:hover a #button[aria-label^="Unlike"],
-#like-button:hover{
-  color: var(--like-hover-color);
-}
-
-/* Color when hovering over dislike buttons */
-ytd-toggle-button-renderer:hover a #button[aria-label^="Dislike"],
-ytd-toggle-button-renderer:hover a #button[aria-label^="Remove dislike"],
-#dislike-button:hover{
-  color: var(--dislike-hover-color);
-}
-
 /* Color when a like button is pressed */
-#button[aria-label*="like"][aria-pressed="true"],
-#button[aria-label*="Unlike"]{
-  color: var(--like-color);
+button[aria-label*="ike"][aria-pressed="true"] svg{
+  fill: var(--like-color);
 }
 
 /* Color when a dislike button is pressed */
-#button[aria-label*="islike"][aria-pressed="true"],
-#button[aria-label*="Remove dislike"]{
-  color: var(--dislike-color);
+button[aria-label*="islike"][aria-pressed="true"] svg{
+  fill: var(--dislike-color);
 }
 
-/* like/dislike counts don't change color when the like/dislike button is pressed */
-.ytd-menu-renderer #text.ytd-toggle-button-renderer{
-  color: var(--yt-spec-text-secondary);
+/* Color when hovering over like buttons */
+button[aria-label*="ike"]:hover svg{
+  fill: var(--like-hover-color);
+}
+
+/* Color when hovering over dislike buttons */
+button[aria-label*="islike"]:hover svg{
+  fill: var(--dislike-hover-color);
+}
+
+/* Remove left margin to put the view count aligned with the title and chanel info */
+#description-inner{
+  margin-left: 0px;
+}
+
+/* Make description's background transparent, and adjust top margin */
+#description{
+  background-color:#0000;
+  margin-top: -0.25em;
+}
+
+/* Separate View Count from the rest of the description*/
+#description #info-container::after{
+  content: "";
+  width: 100%;
+  height:1px;
+  background-color: var(--yt-spec-icon-disabled);
+  display: block;
+  margin-top: 1em;
+}
+
+/* Pad the top and bottom of the actual description, to separate it from the view counter and "show more" elements */
+#description-inline-expander{
+  margin-left: 12px;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
 }
 
 /*------------------------------------------------
