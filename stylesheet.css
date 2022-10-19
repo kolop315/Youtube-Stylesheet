@@ -90,7 +90,7 @@ button[aria-label*="islike"]:hover svg{
 }
 
 /* Pad the top and bottom of the actual description, to separate it from the view counter and "show more" elements */
-#description-inline-expander{
+#description-inline-expander, #expand{
   margin-left: 12px;
   padding-top: 0.5em;
   padding-bottom: 0.5em;
