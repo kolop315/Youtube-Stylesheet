@@ -218,10 +218,9 @@ ytd-feed-filter-chip-bar-renderer{
   display: none;
 }
 
-/* change background and text color */
-#cancel-button.ytd-commentbox{
+/* change background color of cancel button */
+#cancel-button.ytd-commentbox button{
   background: var(--yt-spec-icon-disabled);
-  color: var(--yt-spec-text-primary-inverse);
 }
 
 /* Have the text elements of the buttons fill the buttons so they can be properly selected */
