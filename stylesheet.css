@@ -12,6 +12,9 @@
   --dislike-hover-color: var(--red-300);
   --dislike-bar-color: var(--red-500);
   
+  --subscribe-color: #FFF;
+  --subscribe-background: #F00;
+  
   --comment-author-color: var(--yt-spec-text-primary);
   --comment-author-background: var(--yt-spec-error-background);
   --comment-badge-color: var(--blue-500);
@@ -47,6 +50,12 @@
 /*------------------------------------------------
   Video Information Styles
 ------------------------------------------------*/
+
+/* Color of the subscribe button, when not subscribed to a channel */
+button[aria-label^="Subscribe to"]{
+  background-color: var(--subscribe-background);
+  color: var(--subscribe-color);
+}
 
 /* Color when a like button is pressed */
 button[aria-label*="ike"][aria-pressed="true"] svg{
