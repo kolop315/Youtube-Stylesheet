@@ -147,14 +147,14 @@ ytd-author-comment-badge-renderer svg, .badge-style-type-verified svg{
 ------------------------------------------------*/
 
 /* Center the Category scroll bar on the Home page and add a spacing from the top*/
-ytd-feed-filter-chip-bar-renderer{
+[page-subtype="home"] ytd-feed-filter-chip-bar-renderer{
   justify-content: center;
   width: 100%;
   margin-top: 16px;
 }
 
 /* Make the Category Bar on the Home Page rounded, spaced from its sides, and have relative positioning */
-#chips-wrapper.ytd-feed-filter-chip-bar-renderer{
+[page-subtype="home"] #chips-wrapper.ytd-feed-filter-chip-bar-renderer{
   position: relative;
   top: 0px;
   width: calc(var(--ytd-rich-grid-chips-bar-width) * var(--home-categories-width-mod));
