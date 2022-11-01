@@ -62,6 +62,12 @@ button[aria-label*="ike"][aria-pressed="true"] svg{
   fill: var(--like-color);
 }
 
+/* Color for when the animated like button is pressed */
+button[aria-label*="ike"][aria-pressed="true"] yt-animated-icon *{
+  fill: var(--like-color);
+  stroke: var(--like-color);
+}
+
 /* Color when a dislike button is pressed */
 button[aria-label*="islike"][aria-pressed="true"] svg{
   fill: var(--dislike-color);
@@ -70,6 +76,12 @@ button[aria-label*="islike"][aria-pressed="true"] svg{
 /* Color when hovering over like buttons */
 button[aria-label*="ike"]:hover svg{
   fill: var(--like-hover-color);
+}
+
+/* Color when hovering over the animated like button */
+button[aria-label*="ike"]:hover yt-animated-icon *{
+  fill: var(--like-hover-color);
+  stroke: var(--like-hover-color);
 }
 
 /* Color when hovering over dislike buttons */
