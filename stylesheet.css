@@ -25,11 +25,15 @@
   --comment-buttons-justification: space-between;
   --comment-footer-justification: flex-end;
 
+  --shorts-comment-buttons-total-width: 100%;
+  --shorts-comment-buttons-margins: 0 0 0 3%;
+
   --sentiment-width: 300px;
   --sentiment-height: 12px;
   --sentiment-radius: 4px;
 
   --home-categories-width-mod: 0.8;
+  --home-page-row-margin: 24px;
 
   --blue-500: #4285F4;
   --blue-300: #76A7FA;
@@ -171,9 +175,15 @@ ytd-author-comment-badge-renderer svg, .badge-style-type-verified svg{
   border-radius: 32px;
 }
 
-/* Have the chips have a slightly smaller width to account for the rounded edges */
+/* Have the chips have a margin on the left and right to account for the rounded edges */
 #scroll-container.ytd-feed-filter-chip-bar-renderer{
-  width: calc(var(--ytd-rich-grid-chips-bar-width) * var(--home-categories-width-mod) - 16px);
+  margin-left: 8px;
+  margin-right: 8px;
+}
+
+/* Adjust the top margin for chip items to have them be more centered in the scroll container */
+#scroll-container yt-chip-cloud-chip-renderer{
+  margin-top:10px;
 }
 
 /* Round the right arrow button and make its background solid */
@@ -195,6 +205,16 @@ ytd-author-comment-badge-renderer svg, .badge-style-type-verified svg{
 /* change contents' content justification to better fill space when an ad element may mysteriously be missing */
 [page-subtype="home"] #contents{
   justify-content: space-between;
+}
+
+/* Reduce margin between rows on the home page */
+[page-subtype="home"] #contents #contents ytd-rich-item-renderer{
+  margin-bottom:var(--home-page-row-margin);
+}
+
+/* Remove Shorts rows from the home page */
+[page-subtype="home"] [is-shorts]{
+  display:none;
 }
 
 /*------------------------------------------------
@@ -257,4 +277,14 @@ ytd-author-comment-badge-renderer svg, .badge-style-type-verified svg{
 #buttons.ytd-commentbox a.ytd-button-renderer{
   width: 100%;
   height: 100%;
+}
+
+/* Fix the width of comment buttons when on the youtube shorts page */
+ytd-shorts #buttons.ytd-commentbox{
+  width: var(--shorts-comment-buttons-total-width);
+}
+
+/* Fix the margin of comment buttons when on the youtube shorts page */
+ytd-shorts #buttons.ytd-commentbox ytd-button-renderer{
+  margin: var(--shorts-comment-buttons-margins);
 }
