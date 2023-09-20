@@ -26,7 +26,10 @@
   --comment-footer-justification: flex-end;
 
   --shorts-comment-buttons-total-width: 100%;
-  --shorts-comment-buttons-margins: 0 0 0 3%;
+
+  --sentiment-width: 300px;
+  --sentiment-height: 12px;
+  --sentiment-radius: 4px;
 
   --home-categories-width-mod: 0.8;
   --home-page-row-margin: 24px;
@@ -140,7 +143,7 @@ button[aria-label*="islike"]:hover svg{
   background: var(--comment-author-background);
 }
 
-/* set text color of channel owner's name in their comments and make it bold */
+/* Set text color of channel owner's name in their comments and make it bold */
 #header-author [creator] #text{
   color: var(--yt-spec-text-primary-inverse);
   font-weight: bold;
@@ -195,21 +198,21 @@ ytd-author-comment-badge-renderer svg, .badge-style-type-verified svg{
 }
 
 /*------------------------------------------------
-  Home Page's Contents Styles
+  Home and Subscription Pages' Contents Styles
 ------------------------------------------------*/
 
-/* change contents' content justification to better fill space when an ad element may mysteriously be missing */
+/* Change contents' content justification to better fill space when an ad element may mysteriously be missing */
 [page-subtype="home"] #contents{
   justify-content: space-between;
 }
 
-/* Reduce margin between rows on the home page */
-[page-subtype="home"] #contents #contents ytd-rich-item-renderer{
+/* Reduce margin between rows on the home and subscription pages */
+[page-subtype="home"] #contents #contents ytd-rich-item-renderer, [page-subtype="subscriptions"] #contents #contents ytd-rich-item-renderer{
   margin-bottom:var(--home-page-row-margin);
 }
 
-/* Remove Shorts rows from the home page */
-[page-subtype="home"] [is-shorts]{
+/* Remove Shorts rows from the home and subscription pages */
+[page-subtype="home"] [is-shorts], [page-subtype="subscriptions"] [is-shorts]{
   display:none;
 }
 
@@ -217,7 +220,7 @@ ytd-author-comment-badge-renderer svg, .badge-style-type-verified svg{
   Comment Text Box Styles
 ------------------------------------------------*/
 
-/* make comment box have a rounded outline*/
+/* Make comment box have a rounded outline*/
 #input-container .input-wrapper, #placeholder-area{
   border: 1px solid var(--yt-spec-10-percent-layer);
   border-radius: 8px;
@@ -229,17 +232,17 @@ ytd-author-comment-badge-renderer svg, .badge-style-type-verified svg{
   padding-bottom: 4px;
 }
 
-/* remove underline from comment box */
+/* Remove underline from comment box */
 #input-container.ytd-commentbox .underline{
   display: none;
 }
 
-/* center the elements in the footer of the comment box */
+/* Center the elements in the footer of the comment box */
 #footer.ytd-commentbox{
   justify-content: var(--comment-footer-justification);
 }
 
-/* elements in the footer of the comment box that are not buttons are allotted 0 space to grow into(flex be wack) */
+/* Elements in the footer of the comment box that are not buttons are allotted 0 space to grow into(flex be wack) */
 #footer.ytd-commentbox >:not(#buttons){
   flex: 0;
 }
@@ -258,13 +261,13 @@ ytd-author-comment-badge-renderer svg, .badge-style-type-verified svg{
   margin: var(--comment-buttons-margins);
 }
 
-/* there is an options button that doesn't do shit for some reason so remove that crap :) */
+/* There is an options button that doesn't seem to do anything for some reason so remove that :) */
 #buttons.ytd-commentbox >:not(ytd-button-renderer)
 {
   display: none;
 }
 
-/* change background color of cancel button */
+/* Change background color of cancel button */
 #cancel-button.ytd-commentbox button{
   background: var(--yt-spec-icon-disabled);
 }
@@ -275,12 +278,8 @@ ytd-author-comment-badge-renderer svg, .badge-style-type-verified svg{
   height: 100%;
 }
 
-/* Fix the width of comment buttons when on the youtube shorts page */
+/* Fix the comment buttons when its a youtube short page */
 ytd-shorts #buttons.ytd-commentbox{
   width: var(--shorts-comment-buttons-total-width);
-}
-
-/* Fix the margin of comment buttons when on the youtube shorts page */
-ytd-shorts #buttons.ytd-commentbox ytd-button-renderer{
-  margin: var(--shorts-comment-buttons-margins);
+  margin:0px;
 }
