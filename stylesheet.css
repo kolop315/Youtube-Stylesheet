@@ -26,10 +26,7 @@
   --comment-footer-justification: flex-end;
 
   --shorts-comment-buttons-total-width: 100%;
-
-  --sentiment-width: 300px;
-  --sentiment-height: 12px;
-  --sentiment-radius: 4px;
+  --shorts-comment-buttons-margins: 0 0 0 3%;
 
   --home-categories-width-mod: 0.8;
   --home-page-row-margin: 24px;
@@ -207,12 +204,14 @@ ytd-author-comment-badge-renderer svg, .badge-style-type-verified svg{
 }
 
 /* Reduce margin between rows on the home and subscription pages */
-[page-subtype="home"] #contents #contents ytd-rich-item-renderer, [page-subtype="subscriptions"] #contents #contents ytd-rich-item-renderer{
+[page-subtype="home"] #contents #contents ytd-rich-item-renderer, 
+[page-subtype="subscriptions"] #contents #contents ytd-rich-item-renderer{
   margin-bottom:var(--home-page-row-margin);
 }
 
 /* Remove Shorts rows from the home and subscription pages */
-[page-subtype="home"] [is-shorts], [page-subtype="subscriptions"] [is-shorts]{
+[page-subtype="home"] [is-shorts],
+[page-subtype="subscriptions"] [is-shorts]{
   display:none;
 }
 
@@ -261,7 +260,7 @@ ytd-author-comment-badge-renderer svg, .badge-style-type-verified svg{
   margin: var(--comment-buttons-margins);
 }
 
-/* There is an options button that doesn't seem to do anything for some reason so remove that :) */
+/* There is an options button that doesn't do shit for some reason so remove that crap :) */
 #buttons.ytd-commentbox >:not(ytd-button-renderer)
 {
   display: none;
@@ -278,8 +277,12 @@ ytd-author-comment-badge-renderer svg, .badge-style-type-verified svg{
   height: 100%;
 }
 
-/* Fix the comment buttons when its a youtube short page */
+/* Fix the width of comment buttons when on the youtube shorts page */
 ytd-shorts #buttons.ytd-commentbox{
   width: var(--shorts-comment-buttons-total-width);
-  margin:0px;
+}
+
+/* Fix the margin of comment buttons when on the youtube shorts page */
+ytd-shorts #buttons.ytd-commentbox ytd-button-renderer{
+  margin: var(--shorts-comment-buttons-margins);
 }
