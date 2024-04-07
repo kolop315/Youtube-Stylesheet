@@ -66,8 +66,8 @@ button[aria-label^="Subscribe to"]{
   color: var(--subscribe-color);
 }
 
-/* Color when a like button is pressed */
-button[aria-label*="ike"][aria-pressed="true"] svg{
+/* Color when a comment like button is pressed */
+#like-button [aria-pressed="true"] svg{
   fill: var(--like-color);
 }
 
@@ -78,23 +78,25 @@ button[aria-label*="ike"][aria-pressed="true"] yt-animated-icon *{
 }
 
 /* Color when a dislike button is pressed */
-button[aria-label*="islike"][aria-pressed="true"] svg{
+button[aria-label*="islike"][aria-pressed="true"] svg,
+#dislike-button [aria-pressed="true"] svg{
   fill: var(--dislike-color);
 }
 
-/* Color when hovering over like buttons */
-button[aria-label*="ike"]:hover svg{
+/* Color when hovering over comment like buttons */
+#like-button:hover svg{
   fill: var(--like-hover-color);
 }
 
-/* Color when hovering over the animated like button */
+/* Color when hovering over the video's like button */
 button[aria-label*="ike"]:hover yt-animated-icon *{
   fill: var(--like-hover-color);
   stroke: var(--like-hover-color);
 }
 
 /* Color when hovering over dislike buttons */
-button[aria-label*="islike"]:hover svg{
+button[aria-label*="islike"]:hover svg,
+#dislike-button:hover svg{
   fill: var(--dislike-hover-color);
 }
 
