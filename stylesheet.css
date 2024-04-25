@@ -66,7 +66,7 @@ button[aria-label^="Subscribe to"]{
   color: var(--subscribe-color);
 }
 
-/* Color when a comment like button is pressed */
+/* Color when a comment or shorts like button is pressed */
 #like-button [aria-pressed="true"] svg{
   fill: var(--like-color);
 }
@@ -83,8 +83,8 @@ button[aria-label*="islike"][aria-pressed="true"] svg,
   fill: var(--dislike-color);
 }
 
-/* Color when hovering over comment like buttons */
-#like-button:hover svg{
+/* Color when hovering over comment and shorts like buttons. the not selector is because on shorts #like-button contains both like and dislike buttons for some reason */
+#like-button:not(.button-container):hover svg{
   fill: var(--like-hover-color);
 }
 
