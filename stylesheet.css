@@ -133,17 +133,17 @@ button[aria-label*="islike"]:hover svg,
 ------------------------------------------------*/
 
 /* Comment users' name color */
-#header-author a :first-child{
+#author-text{
   color: var(--comment-author-color);
 }
 
 /* Set background color of comments by the video's owner */
-#header-author [creator]{
+[creator]{
   background: var(--comment-author-background);
 }
 
 /* Set text color of channel owner's name in their comments and make it bold */
-#header-author [creator] #text{
+[creator] #name{
   color: var(--yt-spec-text-primary-inverse);
   font-weight: bold;
 }
