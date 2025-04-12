@@ -27,7 +27,9 @@
 
   --shorts-comment-buttons-total-width: 100%;
   --shorts-comment-buttons-margins: 0 0 0 3%;
-
+  
+  --videos-per-row: 6;
+  
   --home-categories-width-mod: 0.8;
   --home-page-row-margin: 24px;
 
@@ -200,20 +202,23 @@ ytd-author-comment-badge-renderer svg, .badge-style-type-verified svg{
   Home and Subscription Pages' Contents Styles
 ------------------------------------------------*/
 
-/* Change contents' content justification to better fill space when an ad element may mysteriously be missing */
-[page-subtype="home"] #contents{
-  justify-content: space-between;
+/* Set how many items should be in each row */
+[page-subtype="home"] #contents,
+[page-subtype="subscriptions"] #contents{
+  --ytd-rich-grid-items-per-row: var(--videos-per-row)!important;
+  justify-content: space-evenly;
 }
 
-/* Reduce margin between rows on the home and subscription pages */
-[page-subtype="home"] #contents #contents ytd-rich-item-renderer, 
-[page-subtype="subscriptions"] #contents #contents ytd-rich-item-renderer{
-  margin-bottom:var(--home-page-row-margin);
+/* Remove margins from video items so they can be spaced evenly */
+[page-subtype="home"] #contents > *,
+[page-subtype="subscriptions"] #contents > *{
+  margin-left: 0px;
+  margin-right: 0px;
 }
 
-/* Remove Shorts rows from the home and subscription pages */
-[page-subtype="home"] [is-shorts],
-[page-subtype="subscriptions"] [is-shorts]{
+/* Remove non-video content and shorts from the home and subscriptions pages */
+[page-subtype="home"] #contents ytd-rich-section-renderer,
+[page-subtype="subscriptions"] #contents ytd-rich-section-renderer{
   display:none;
 }
 
@@ -287,4 +292,8 @@ ytd-shorts #buttons.ytd-commentbox{
 /* Fix the margin of comment buttons when on the youtube shorts page */
 ytd-shorts #buttons.ytd-commentbox ytd-button-renderer{
   margin: var(--shorts-comment-buttons-margins);
+}
+
+.ytd-watch-next-secondary-results-renderer yt-avatar-shape{
+  display: none;
 }
