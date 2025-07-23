@@ -45,7 +45,8 @@
 ------------------------------------------------*/
 
 /* Remove rounded corners of thumbnails */
-#thumbnail{
+#thumbnail,
+yt-thumbnail-view-model{
   border-radius: 0px;
 }
 
