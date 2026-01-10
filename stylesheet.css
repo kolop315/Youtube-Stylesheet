@@ -16,7 +16,7 @@
   --subscribe-background: #F00;
 
   --comment-author-color: var(--yt-spec-text-primary);
-  --comment-author-background: var(--yt-spec-error-background);
+  --comment-author-background: white;
   --comment-badge-color: var(--blue-500);
 
   --comment-buttons-max-width: 50%;
