@@ -85,7 +85,8 @@ button[aria-label*="islike"][aria-pressed="true"] svg{
 }
 
 /* Color when hovering over most like buttons */
-button[aria-label*="ike"]:hover svg{
+button[aria-label*="ike"]:hover svg,
+button[aria-label*="ike"][aria-pressed="false"]:hover yt-animated-icon *{
   fill: var(--like-hover-color);
 }
 
