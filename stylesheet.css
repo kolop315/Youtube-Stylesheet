@@ -11,10 +11,10 @@
   --dislike-color: var(--red-500);
   --dislike-hover-color: var(--red-300);
   --dislike-bar-color: var(--red-500);
-  
+
   --subscribe-color: #FFF;
   --subscribe-background: #F00;
-  
+
   --comment-author-color: var(--yt-spec-text-primary);
   --comment-author-background: var(--yt-spec-error-background);
   --comment-badge-color: var(--blue-500);
@@ -23,13 +23,12 @@
   --comment-buttons-total-width: 25%;
   --comment-buttons-margins: 4px 0 -12px 2%;
   --comment-buttons-justification: space-between;
-  --comment-footer-justification: flex-end;
 
   --shorts-comment-buttons-total-width: 100%;
   --shorts-comment-buttons-margins: 0 0 0 3%;
-  
+
   --videos-per-row: 6;
-  
+
   --home-categories-width-mod: 0.8;
   --home-page-row-margin: 24px;
 
@@ -69,8 +68,8 @@ button[aria-label^="Subscribe to"]{
   color: var(--subscribe-color);
 }
 
-/* Color when a comment or shorts like button is pressed */
-#like-button [aria-pressed="true"] svg{
+/* Color for when a like button is pressed */
+button[aria-label*="ike"][aria-pressed="true"] svg{
   fill: var(--like-color);
 }
 
@@ -81,25 +80,23 @@ button[aria-label*="ike"][aria-pressed="true"] yt-animated-icon *{
 }
 
 /* Color when a dislike button is pressed */
-button[aria-label*="islike"][aria-pressed="true"] svg,
-#dislike-button [aria-pressed="true"] svg{
+button[aria-label*="islike"][aria-pressed="true"] svg{
   fill: var(--dislike-color);
 }
 
-/* Color when hovering over comment and shorts like buttons. the not selector is because on shorts #like-button contains both like and dislike buttons for some reason */
-#like-button:not(.button-container):hover svg{
+/* Color when hovering over most like buttons */
+button[aria-label*="ike"]:hover svg{
   fill: var(--like-hover-color);
 }
 
-/* Color when hovering over the video's like button */
-button[aria-label*="ike"]:hover yt-animated-icon *{
+/* Color when hovering over the video's like button (pressed, only difference is needing to change the stroke color) */
+button[aria-label*="ike"][aria-pressed="true"]:hover yt-animated-icon *{
   fill: var(--like-hover-color);
   stroke: var(--like-hover-color);
 }
 
 /* Color when hovering over dislike buttons */
-button[aria-label*="islike"]:hover svg,
-#dislike-button:hover svg{
+button[aria-label*="islike"]:hover svg{
   fill: var(--dislike-hover-color);
 }
 
@@ -228,30 +225,31 @@ ytd-author-comment-badge-renderer svg, .badge-style-type-verified svg{
 ------------------------------------------------*/
 
 /* Make comment box have a rounded outline*/
-#input-container .input-wrapper, #placeholder-area{
-  border: 1px solid var(--yt-spec-10-percent-layer);
-  border-radius: 8px;
-  padding: 8px;
-}
-
-/* Add some space to the bottom of the comment box to better center the text within it */
-#input-container.ytd-commentbox .input-wrapper{
-  padding-bottom: 4px;
+#placeholder-area,
+#creation-box{
+border: 1px solid grey;
+border-radius: 8px;
+padding: 8px;
 }
 
 /* Remove underline from comment box */
 #input-container.ytd-commentbox .underline{
-  display: none;
+display: none;
 }
 
-/* Center the elements in the footer of the comment box */
-#footer.ytd-commentbox{
-  justify-content: var(--comment-footer-justification);
+/* Fix the spacing at the bottom of the comment box */
+#input-container.ytd-commentbox{
+padding-bottom: 0px;
 }
 
-/* Elements in the footer of the comment box that are not buttons are allotted 0 space to grow into(flex be wack) */
-#footer.ytd-commentbox >:not(#buttons){
-  flex: 0;
+/* Add a little margin between the comment box and the comment buttons */
+#creation-box{
+margin-bottom: 4px;
+}
+
+/* Remove the emoji picker */
+button[aria-label*="emoji"]{
+  display:none;
 }
 
 /* Set the total width of the buttons(combined) */
