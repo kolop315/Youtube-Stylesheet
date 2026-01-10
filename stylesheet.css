@@ -171,6 +171,7 @@ ytd-author-comment-badge-renderer svg, .badge-style-type-verified svg{
   width: calc(var(--ytd-rich-grid-chips-bar-width) * var(--home-categories-width-mod));
   border: 2px solid var(--yt-spec-10-percent-layer);
   border-radius: 32px;
+  background-color: var(--yt-spec-brand-background-solid);
 }
 
 /* Have the chips have a margin on the left and right to account for the rounded edges */
@@ -187,13 +188,23 @@ ytd-author-comment-badge-renderer svg, .badge-style-type-verified svg{
 /* Round the right arrow button and make its background solid */
 #right-arrow-button.ytd-feed-filter-chip-bar-renderer{
   border-radius: 0 32px 32px 0;
-  background: var(--yt-spec-brand-background-solid);
+  background-color: var(--yt-spec-brand-background-solid);
+}
+
+/* Change the fading gradient color on the right arrow */
+#right-arrow::before{
+  background: linear-gradient(to left,var(--yt-spec-brand-background-solid) 20%,rgba(255,255,255,0) 80%)
+}
+
+/* Change the fading gradient color on the left arrow */
+#left-arrow::after{
+background: linear-gradient(to right,var(--yt-spec-brand-background-solid) 20%,rgba(255,255,255,0) 80%)
 }
 
 /* Round the left arrow button and make its background solid */
 #left-arrow-button.ytd-feed-filter-chip-bar-renderer{
   border-radius: 32px 0 0 32px;
-  background: var(--yt-spec-brand-background-solid);
+  background-color: var(--yt-spec-brand-background-solid);
 }
 
 /*------------------------------------------------
