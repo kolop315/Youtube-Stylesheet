@@ -2,6 +2,8 @@
   Custom Youtube Stylesheet
   Author: Nicholas Spalding
   Github Repo: https://github.com/kolop315/Youtube-Stylesheet
+
+  Made for use with Stylebot extension: https://stylebot.dev/
 ------------------------------------------------*/
 
 :root{
@@ -28,6 +30,7 @@
   --shorts-comment-buttons-margins: 0 0 0 3%;
 
   --videos-per-row: 6;
+  --item-min-width: 300px;
 
   --home-categories-width-mod: 0.8;
   --home-page-row-margin: 24px;
@@ -47,6 +50,12 @@
 #thumbnail,
 yt-thumbnail-view-model{
   border-radius: 0px;
+}
+
+/* set a minimum width for items on the homepage */
+[page-subtype="home"] [items-per-row],
+[page-subtype="subscriptions"] [items-pre-row]{
+  min-width: var(--item-min-width);
 }
 
 /*------------------------------------------------
@@ -194,12 +203,12 @@ ytd-author-comment-badge-renderer svg, .badge-style-type-verified svg{
 
 /* Change the fading gradient color on the right arrow */
 #right-arrow::before{
-  background: linear-gradient(to left,var(--yt-spec-brand-background-solid) 20%,rgba(255,255,255,0) 80%)
+  background: linear-gradient(to left,var(--yt-spec-brand-background-solid) 20%,rgba(255,255,255,0) 80%) !important;
 }
 
 /* Change the fading gradient color on the left arrow */
 #left-arrow::after{
-background: linear-gradient(to right,var(--yt-spec-brand-background-solid) 20%,rgba(255,255,255,0) 80%)
+background: linear-gradient(to right,var(--yt-spec-brand-background-solid) 20%,rgba(255,255,255,0) 80%) !important;
 }
 
 /* Round the left arrow button and make its background solid */
