@@ -17,7 +17,7 @@
   --subscribe-color: #FFF;
   --subscribe-background: #F00;
 
-  --comment-author-color: var(--yt-spec-text-primary);
+  --comment-author-color: var(--yt-sys-color-baseline--text-primary);
   --comment-author-background: white;
   --comment-badge-color: var(--blue-500);
 
@@ -33,7 +33,7 @@
   --item-min-width: 300px;
 
   --home-categories-width-mod: 0.8;
-  --home-categories-background: var(--yt-spec-menu-background);
+  --home-categories-background: var(--yt-sys-color-baseline--menu-background);
   --home-page-row-margin: 24px;
 
   --blue-500: #4285F4;
